@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install package apache
+    yum:
+      name: apache2
+      state: absent
+
+  - name: install apache php support
+    yum:
+      name: libapache2-mod-php
+      state: absent
+    
